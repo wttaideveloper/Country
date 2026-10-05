@@ -1,0 +1,189 @@
+/* Modern refresh: larger type, cleaner sans, softer surfaces, rounded shapes.
+   Loaded last so it layers over globals/website/nature without rewriting them. */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap');
+
+:root {
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Plus Jakarta Sans', 'DM Sans', system-ui, sans-serif;
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+  --shadow-sm: 0 1px 2px #1f3a2a0d, 0 4px 14px #1f3a2a0a;
+  --shadow: 0 2px 6px #1f3a2a0d, 0 18px 40px -12px #1f3a2a26;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+/* ---------- Base type: everything a step bigger ---------- */
+body { font-family: var(--sans); font-size: 18px; letter-spacing: -.005em; }
+p { line-height: 1.75; }
+h2 { font-size: 52px; letter-spacing: -.035em; line-height: 1.12; font-weight: 500; }
+h2 em, .hero h1 em { font-style: italic; }
+.brand-bottom, .tuition small, .estimate-total small, .inquiry-cost small,
+.suitability aside strong>span, .deposit-preview>strong>small, .duration>span { font-family: var(--sans); }
+
+.eyebrow, .eyebrow.light, .page-intro>.eyebrow, .sphere-detail>.eyebrow,
+.advisor-card>.eyebrow, .chat-panel>.eyebrow, .enquiry-dialog .eyebrow,
+.group-banner .eyebrow, .closing .eyebrow, .demo-confirmation>.eyebrow {
+  font-size: 13px; letter-spacing: .14em; font-weight: 700; text-transform: uppercase;
+}
+.micro, .pillar>.micro, .team-body .micro, .resource-card-body>.micro,
+.daily-timeline .micro, .advisor-card>.micro { font-size: 12.5px; letter-spacing: .1em; }
+.transport-grid .micro { font-size: 12px; }
+
+/* Body copy across sections */
+.hero-content>p, .country-hero .hero-content>p { font-size: 19px; line-height: 1.7; }
+.approach-copy p, .section-heading p, .stay-copy>p, .page-intro>p, .editorial-band p,
+.estimate-section>div>p, .group-page>p, .legal-copy p, .empty-state p,
+.confirmation p, .demo-confirmation>p { font-size: 18px; }
+.pillar p, .program-card>p, .split-heading>p, .aftercare-copy>p, .faq-section>div>p,
+.sphere-detail>p, .steps-grid p, .suitability>div>p, .suitability aside p, .team-role,
+.team-bio, .closing p, .enquiry-dialog>p, .next-steps p, .deposit-preview>p,
+.resource-card-body>p, .transport-grid p, .daily-timeline p, .living-table-banner p,
+.article-callout p, .article-next p, .included-list>span, .process-list li { font-size: 16.5px; }
+.article-content>p, .article-section p, .recipe-method, .article-heading>p { font-size: 19px; line-height: 1.85; }
+.ingredient { font-size: 17px; }
+
+/* Small print gets a sensible floor */
+.program-card li, .amenities span, .aftercare-list span, .values-strip span,
+.values-strip>span, .law-list p, .faq-item p, .group-banner p, .footer-main>div>p,
+.footer-links, .footer-links button, .disclaimer p, .disclaimer strong, .small-note,
+.educational-notice p, .advisor-card>p, .sidebar-step p, .inquiry-cost p, .inquiry-cost>span,
+.form-intro, .inquiry-main label, .inquiry-main .field-help, .check-label small,
+.chat-panel p, .program-note, .collage-label, .model-attribution, .results-label,
+.receipt>span, .demo-note, .form-disclosure, .estimate-card>.small-note { font-size: 15px; }
+.disclaimer .small-note, .footer-bottom, .footer-place, .receipt small,
+.breadcrumb, .breadcrumb span:last-child, .image-caption, .article-meta>span,
+.article-meta>button, .recipe-facts>span, .recipe-facts>label, .form-progress li { font-size: 14px; }
+.faq-item h3 button, .law-list h4, .check-label, .estimate-lines>span,
+.estimate-total>span, .review-details>div, .payment-options>label { font-size: 16.5px; }
+label { font-size: 15px; }
+input, select, textarea { font-size: 16px; }
+
+/* ---------- Ribbon + sticky glass header ---------- */
+.demo-ribbon { font-size: 13px; padding-left: 5%; padding-right: 5%; }
+.demo-ribbon>span:first-child { font-size: 11px; }
+.ribbon-location { font-size: 13px; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 30; max-width: none; height: 84px;
+  padding: 0 max(5%, calc((100% - 1380px) / 2));
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid #28563d14;
+}
+.site-header .brand { font-size: 26px; font-weight: 500; }
+.site-header .brand-bottom { font-size: 10.5px; letter-spacing: .28em; }
+.brand-icon { border-radius: 14px; }
+.site-header .navigation { font-size: 16px; font-weight: 500; gap: 26px; }
+.navigation>a { position: relative; padding: 6px 0; transition: color .2s; }
+.navigation>a:after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px;
+  background: var(--orange); transform: scaleX(0); transition: transform .25s var(--ease);
+}
+.navigation>a:hover:after, .navigation a[aria-current=page]:after { transform: scaleX(1); }
+.locale-switch { font-size: 14px; background: #28563d0d; padding: 6px 12px; border-radius: 999px; }
+.site-header .nav-cta { font-size: 15px; padding: 12px 22px; min-height: 46px; }
+
+/* ---------- Buttons & links ---------- */
+.button {
+  border-radius: 999px; font-size: 16px; font-weight: 600; min-height: 52px; padding: 15px 28px; gap: 18px;
+  box-shadow: 0 6px 18px -6px #28563d66; transition: background .25s, transform .25s var(--ease), box-shadow .25s;
+}
+.button:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -8px #28563d80; }
+.button-orange { box-shadow: 0 6px 18px -6px #db784780; }
+.button-outline, .program-button { box-shadow: none; }
+.program-button { font-size: 15px; padding: 14px; }
+.text-link { font-size: 16px; border-bottom-width: 2px; }
+
+/* ---------- Hero ---------- */
+.hero { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+@media (min-width: 1500px) { .hero { border-radius: var(--radius-lg); margin-top: 12px; } }
+.hero h1, .country-hero h1 { font-size: 80px; font-weight: 500; letter-spacing: -.04em; line-height: 1.04; }
+.eyebrow.light {
+  display: inline-flex; padding: 8px 16px; border-radius: 999px;
+  background: #ffffff1a; border: 1px solid #ffffff2e; backdrop-filter: blur(8px);
+}
+.hero-bottom { font-size: 12px; }
+.hero-bottom>a { font-size: 15px; }
+.hero-stamp span, .country-hero .hero-stamp>span { font-size: 12px; }
+.hero-stamp small { font-size: 16px; }
+
+/* ---------- Surfaces: rounded cards with soft depth ---------- */
+.pillar, .program-card, .transport-grid article, .team-card, .resource-card, .estimate-card,
+.advisor-card, .inquiry-cost, .suitability aside, .living-table-banner, .next-steps,
+.deposit-preview, .receipt, .eligibility, .sphere-detail, .chat-panel, .enquiry-dialog {
+  border-radius: var(--radius);
+}
+.pillar, .program-card, .transport-grid article, .team-card, .resource-card {
+  box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.pillar:hover, .program-card:hover, .transport-grid article:hover, .team-card:hover, .resource-card:hover {
+  transform: translateY(-6px); box-shadow: var(--shadow);
+}
+.pillar { padding: 36px 32px; }
+.program-card { padding: 36px 30px 30px; border-top-width: 1px; }
+.estimate-card { box-shadow: var(--shadow); }
+.flagship { border-radius: 999px; font-size: 12px; }
+.icon-tile { border-radius: 14px; }
+.approach-photo>img, .room-photo, .food-photo, .article-hero img, .resource-image { border-radius: var(--radius); }
+.resource-image { border-radius: var(--radius) var(--radius) 0 0; }
+.resource-image>span { border-radius: 999px; font-size: 11.5px; padding: 6px 12px; }
+.photo-note { border-radius: var(--radius); box-shadow: var(--shadow); }
+.page-intro, .editorial-band, .aftercare, .closing, .program-section, .schedule-section { border-radius: var(--radius-lg); }
+.page-intro { margin: 0 12px; }
+.closing, .aftercare, .editorial-band, .program-section, .schedule-section { margin-left: 12px; margin-right: 12px; }
+.educational-notice, .article-callout, .demo-note { border-radius: var(--radius-sm); }
+.filter-row button { font-size: 15px; padding: 11px 22px; }
+.search-field, input, select, textarea { border-radius: 12px; }
+input:focus, select:focus, textarea:focus { border-color: #6d8658; box-shadow: 0 0 0 4px #6d865822; outline: none; }
+.payment-options>label { border-radius: 12px; }
+.whatsapp-button { width: 58px; height: 58px; box-shadow: var(--shadow); }
+
+/* ---------- Card headings ---------- */
+.pillar h3, .program-card h3 { font-size: 28px; font-weight: 500; }
+.sphere-detail>h3 { font-size: 40px; }
+.steps-grid h3, .advisor-card>h3, .suitability aside h3, .living-table-banner h3 { font-size: 29px; }
+.resource-card-body>h2, .resource-card-body>h3, .transport-grid h3, .next-steps h3,
+.deposit-preview h3, .inquiry-cost h3, .chat-panel h3 { font-size: 26px; }
+.daily-timeline h3 { font-size: 24px; }
+.group-banner h3 { font-size: 27px; }
+.page-intro h1 { font-size: 64px; font-weight: 500; letter-spacing: -.035em; }
+.article-heading h1 { font-size: 60px; font-weight: 500; letter-spacing: -.035em; }
+.article-content h2 { font-size: 34px; }
+.closing h2 { font-size: 60px; }
+.sphere-node { font-size: 14px; font-weight: 600; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1150px) {
+  .site-header .navigation { font-size: 14.5px; gap: 16px; }
+  .site-header .nav-cta { font-size: 14px; padding: 11px 16px; }
+  .hero h1, .country-hero h1 { font-size: 68px; }
+}
+@media (max-width: 960px) {
+  .site-header .navigation.expanded { top: 100%; font-size: 18px; border-radius: 0 0 var(--radius) var(--radius); }
+  .sphere-node { font-size: 13px; }
+}
+@media (max-width: 760px) {
+  body { font-size: 17px; }
+  h2 { font-size: 40px; }
+  .site-header { height: 74px; padding: 0 6%; }
+  .hero h1, .country-hero h1 { font-size: clamp(38px, 9.6vw, 58px); }
+  .hero-content>p, .country-hero .hero-content>p { font-size: 16px; }
+  .eyebrow.light { font-size: 11.5px; letter-spacing: .1em; padding: 7px 14px; }
+  .country-hero .hero-stamp>span { font-size: 9px; }
+  .page-intro h1 { font-size: 42px; }
+  .article-heading h1 { font-size: 42px; }
+  .closing h2 { font-size: 42px; }
+  .article-content>p, .article-section p, .recipe-method { font-size: 17.5px; }
+  .demo-ribbon { font-size: 12px; }
+  .demo-ribbon>span:first-child { font-size: 10px; }
+  .page-intro, .closing, .aftercare, .editorial-band, .program-section, .schedule-section {
+    margin-left: 0; margin-right: 0; border-radius: var(--radius);
+  }
+  .hero { border-radius: 0 0 var(--radius) var(--radius); }
+  .pillar:hover, .program-card:hover, .transport-grid article:hover, .team-card:hover, .resource-card:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pillar:hover, .program-card:hover, .transport-grid article:hover, .team-card:hover,
+  .resource-card:hover, .button:hover { transform: none; }
+}
