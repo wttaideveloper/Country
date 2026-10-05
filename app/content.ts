@@ -33,6 +33,41 @@ export const photos = {
   water: 'https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=1000&q=85',
   sunset: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85',
 };
+export type VideoClip = { src: string; poster: string; title: [string, string]; text: [string, string] };
+const mixkit = (id: number, title: [string, string], text: [string, string]): VideoClip => ({ src: `https://assets.mixkit.co/videos/${id}/${id}-720.mp4`, poster: `https://assets.mixkit.co/videos/${id}/${id}-thumb-720-0.jpg`, title, text });
+const clip = {
+  movement: mixkit(40764, ['Movimiento al aire libre', 'Movement outdoors'], ['Estiramientos y ejercicio suave entre los árboles para despertar el cuerpo.', 'Stretching and gentle exercise among the trees to wake up the body.']),
+  prayer: mixkit(5893, ['Oración en comunidad', 'Prayer in community'], ['Culto matutino y momentos de oración compartidos al aire libre.', 'Morning worship and shared moments of prayer in the open air.']),
+  word: mixkit(24172, ['Tiempo con la Palabra', 'Time in the Word'], ['Lectura y reflexión bíblica que dan dirección y paz a cada jornada.', 'Bible reading and reflection that bring direction and peace to each day.']),
+  garden: mixkit(9131, ['Del huerto a la mesa', 'From garden to table'], ['Aprender de dónde viene la comida y cultivar con nuestras propias manos.', 'Learning where food comes from and growing it with our own hands.']),
+  kitchen: mixkit(17225, ['Cocina a base de plantas', 'Plant-based kitchen'], ['Clases prácticas para preparar comidas sencillas, frescas y nutritivas.', 'Hands-on classes to prepare simple, fresh, nourishing meals.']),
+  water: mixkit(108, ['Hidratación consciente', 'Mindful hydration'], ['Agua pura, aire fresco y pausas para escuchar al cuerpo.', 'Pure water, fresh air, and pauses to listen to your body.']),
+  walk: mixkit(41574, ['Caminatas matutinas', 'Morning walks'], ['Senderos entre los árboles para comenzar el día con energía y calma.', 'Trails through the trees to start the day with energy and calm.']),
+  community: mixkit(39767, ['Comunidad cercana', 'A caring community'], ['Caminar juntos, conversar y crecer acompañados.', 'Walking together, talking, and growing in good company.']),
+  dawn: mixkit(21143, ['Descanso y nuevo amanecer', 'Rest and a new dawn'], ['Un ritmo de sueño reparador: cada mañana es una oportunidad para comenzar de nuevo.', 'A restorative sleep rhythm: every morning is a chance to begin again.']),
+  stream: mixkit(529, ['Calma junto al arroyo', 'Calm by the stream'], ['El sonido del agua invita a bajar el ritmo y respirar profundo.', 'The sound of water invites you to slow down and breathe deeply.']),
+  produce: mixkit(26646, ['Alimentos frescos', 'Fresh produce'], ['Vegetales de temporada como base de cada comida del programa.', 'Seasonal vegetables at the heart of every program meal.']),
+  prep: mixkit(15510, ['Preparación sencilla', 'Simple preparation'], ['Lavar, cortar y combinar: hábitos de cocina que se llevan a casa.', 'Washing, chopping, and combining: kitchen habits you take home.']),
+  greens: mixkit(999, ['Nuestro huerto', 'Our garden'], ['Hojas verdes y hierbas que crecen cerca de la cocina.', 'Leafy greens and herbs growing close to the kitchen.']),
+  creek: mixkit(51585, ['Paisajes del campo', 'Countryside landscapes'], ['Ríos, colinas y vegetación alrededor de Bayaguana.', 'Rivers, hills, and greenery around Bayaguana.']),
+  stretch: mixkit(40749, ['Ejercicio diario', 'Daily exercise'], ['Rutinas de movimiento adaptadas a cada huésped.', 'Movement routines adapted to each guest.']),
+  homeCooking: mixkit(26573, ['Cocinar en casa', 'Cooking at home'], ['Recetas sencillas para mantener los nuevos hábitos después de la estadía.', 'Simple recipes to keep new habits going after your stay.']),
+  hydrate: mixkit(52132, ['Constancia diaria', 'Everyday consistency'], ['Pequeños hábitos, como hidratarse, que se mantienen con acompañamiento.', 'Small habits, like staying hydrated, sustained with ongoing support.']),
+};
+export const videos = {
+  hero: [
+    mixkit(4629, ['Caminar al atardecer', 'An evening walk'], ['', '']),
+    mixkit(18272, ['Un momento de gratitud', 'A moment of gratitude'], ['', '']),
+    mixkit(23818, ['Senderos del campo', 'Country paths'], ['', '']),
+    mixkit(996, ['Cuidar el huerto', 'Tending the garden'], ['', '']),
+  ],
+  life: [clip.movement, clip.prayer, clip.garden, clip.kitchen, clip.water, clip.walk, clip.community, clip.dawn],
+  approach: [clip.prayer, clip.word, clip.dawn, clip.stream, clip.movement, clip.produce],
+  programs: [clip.garden, clip.kitchen, clip.stretch, clip.walk, clip.prayer],
+  stay: [clip.creek, clip.produce, clip.prep, clip.greens, clip.stream],
+  aftercare: [clip.homeCooking, clip.hydrate, clip.community, clip.word],
+  resources: [clip.kitchen, clip.water, clip.dawn, clip.stretch, clip.word, clip.community],
+};
 export const pillars = [
   { name: ['Gobernadores', 'Governors'], subtitle: ['El centro espiritual y mental', 'The spiritual & mental core'], description: ['Alinear el espíritu, la voluntad y el intelecto emocional para cultivar resiliencia, paz y una vida con propósito.', 'Aligning the spirit, will, and emotional intellect to cultivate resilience, peace, and purposeful living.'], laws: [
     { name: ['Relación Divina', 'Divine Relationship'], text: ['Confianza en Dios, conexión espiritual y principios del reposo sabático.', 'Trust in God, spiritual connection, and principles of Sabbath rest.'] },

@@ -187,3 +187,136 @@ input:focus, select:focus, textarea:focus { border-color: #6d8658; box-shadow: 0
   .pillar:hover, .program-card:hover, .transport-grid article:hover, .team-card:hover,
   .resource-card:hover, .button:hover { transform: none; }
 }
+
+/* ---------- Refreshed palette: deeper teal-forest + warm coral-amber ---------- */
+:root {
+  --paper: #fbfaf6;
+  --green: #1d5449;
+  --ink: #1f3d36;
+  --muted: #5f6f68;
+  --line: #d9e2da;
+  --orange: #e2734a;
+  --gold: #e8b04f;
+  --mint: #e3efe9;
+}
+.demo-ribbon { background: linear-gradient(90deg, #dcebe3, #f3ead2); color: #2f5a4e; }
+.brand-icon { background: linear-gradient(140deg, #e1efe8, #f6ecd2); border-color: #a9c4b8; color: var(--green); }
+.button:hover { background: #276a5c; }
+.button-orange { background: linear-gradient(135deg, #e8804f, #d9653f); }
+.button-orange:hover { background: linear-gradient(135deg, #ee8b59, #c9592f); }
+.navigation a[aria-current=page], .text-link:hover { color: #c75a34; }
+h2 em, .photo-note em, .sphere-center em { color: #4f8a74; }
+.hero h1 em, .closing h2 em { color: #f3d79a; }
+.country-hero .hero-shade {
+  background: linear-gradient(90deg, #0c2a25e6, #16443a55 62%, #16443a1f), linear-gradient(0deg, #0b241fa6, transparent 48%);
+}
+.values-strip { background: #eef5f1; border-color: #d3e3da; }
+.values-strip svg, .amenities svg, .included-list svg { color: #3f8a73; }
+.program-section, .schedule-section { background: linear-gradient(135deg, #e5f0ea, #f6f0de); }
+.program-card { border-top: 1px solid #d3e1d9; }
+.program-card.featured { background: linear-gradient(150deg, #22604f, #163f37); border-color: #22604f; }
+.flagship { background: linear-gradient(90deg, #f3d79a, #f0c27a); color: #4a3510; }
+.featured .program-button { background: #f6eccf; border-color: #f6eccf; }
+.pillar { background: #e5f0ea; }
+.pillar:nth-child(2) { background: #f7ecd9; }
+.pillar:nth-child(3) { background: #e6eef4; }
+.sphere-node.selected { background: var(--green); border-color: var(--green); }
+.aftercare, .editorial-band { background: linear-gradient(120deg, #dcece4, #e9f2ec 60%, #f6ecd4); }
+.closing { background: radial-gradient(ellipse at 85% 10%, #2f7a6455, transparent 55%), linear-gradient(125deg, #1b4f44, #12382f 75%); }
+.closing-leaf { color: #f3d79a26; }
+.intro-sprout { color: #4f8a7424; }
+.page-intro { background: radial-gradient(ellipse at 90% 15%, #f6e3b780, transparent 50%), linear-gradient(115deg, #e0eee7, #f2f4ec); }
+.footer { background: #eef3ef; }
+.whatsapp-button { background: #22856a; }
+.whatsapp-button:hover { background: #1a6a55; }
+.filter-row button.active, .form-progress li.current>span { background: var(--green); border-color: var(--green); }
+
+/* ---------- Hero background video slider ---------- */
+.hero-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1.4s ease; pointer-events: none;
+}
+.hero-video.active { opacity: 1; }
+.hero-shade { z-index: 0; }
+.hero-content, .hero-stamp, .hero-bottom { z-index: 1; }
+.hero-video-controls {
+  position: absolute; z-index: 2; top: 28px; right: 6%; display: flex; align-items: center; gap: 10px;
+  padding: 7px 14px 7px 7px; border-radius: 999px; background: #0c2a2540; border: 1px solid #ffffff2e;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.hero-video-controls>button:first-child {
+  width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+  background: #ffffff26; color: #fff; transition: background .2s;
+}
+.hero-video-controls>button:first-child:hover { background: #ffffff45; }
+.hero-dot { width: 9px; height: 9px; padding: 0; border-radius: 999px; background: #ffffff66; transition: width .35s var(--ease), background .3s; }
+.hero-dot.active { width: 28px; background: var(--gold); }
+
+/* ---------- Featured video slider ---------- */
+.video-section { max-width: 1200px; margin: auto; padding: 95px 5% 90px; }
+.video-section .split-heading>p { font-size: 16.5px; max-width: 380px; }
+.video-stage {
+  position: relative; margin-top: 44px; aspect-ratio: 16 / 8; min-height: 360px;
+  border-radius: var(--radius-lg); overflow: hidden; background: #0e2a25; box-shadow: var(--shadow);
+}
+.video-main { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: video-in .7s var(--ease); }
+@keyframes video-in { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+.video-stage:after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(0deg, #08201ccc, #08201c33 45%, transparent 70%);
+}
+.video-caption { position: absolute; z-index: 1; left: 40px; bottom: 40px; max-width: 520px; color: #fff; }
+.video-count { font-size: 13px; font-weight: 700; letter-spacing: .14em; color: var(--gold); }
+.video-caption h3 { font-family: var(--serif); font-size: 40px; font-weight: 500; letter-spacing: -.03em; line-height: 1.1; margin: 10px 0 10px; }
+.video-caption p { color: #e2ece7; font-size: 17px; line-height: 1.6; }
+.video-nav { position: absolute; z-index: 1; right: 32px; bottom: 40px; display: flex; gap: 10px; }
+.video-nav button {
+  width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; color: #fff;
+  background: #ffffff22; border: 1px solid #ffffff3a; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  transition: background .2s, transform .2s var(--ease);
+}
+.video-nav button:hover { background: #ffffff40; transform: translateY(-2px); }
+.video-progress { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 4px; background: #ffffff22; }
+.video-progress>span { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--orange)); transform-origin: left; transition: transform .25s linear; }
+.video-rail { display: flex; gap: 16px; margin-top: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 10px; scrollbar-width: thin; }
+.video-rail>button {
+  flex: 0 0 calc((100% - 5 * 16px) / 6); min-width: 160px; scroll-snap-align: start; text-align: left; padding: 0;
+  background: transparent; border-radius: var(--radius-sm); opacity: .62; transition: opacity .25s, transform .25s var(--ease);
+}
+.video-rail>button:hover { opacity: .9; transform: translateY(-3px); }
+.video-rail>button.active { opacity: 1; }
+.video-rail img { height: 92px; border-radius: var(--radius-sm); outline: 3px solid transparent; outline-offset: 2px; transition: outline-color .25s; }
+.video-rail>button.active img { outline-color: var(--orange); }
+.video-rail span { display: block; margin-top: 10px; font-size: 14.5px; font-weight: 600; line-height: 1.4; color: var(--ink); }
+.video-rail small { display: block; font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--muted); margin-bottom: 2px; }
+
+@media (max-width: 760px) {
+  .hero-video-controls { top: 16px; right: 7%; }
+  .video-section { padding: 60px 7%; }
+  .video-stage { aspect-ratio: 4 / 5; min-height: 0; margin-top: 30px; border-radius: var(--radius); }
+  .video-caption { left: 22px; right: 22px; bottom: 96px; }
+  .video-caption h3 { font-size: 30px; }
+  .video-caption p { font-size: 15.5px; }
+  .video-nav { left: 22px; right: auto; bottom: 26px; }
+  .video-nav button { width: 46px; height: 46px; }
+  .video-rail>button { min-width: 140px; }
+  .video-rail img { height: 84px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { transition: none; }
+  .video-main { animation: none; }
+}
+.site-header .navigation>a { white-space: nowrap; }
+@media (max-width: 1100px) and (min-width: 961px) {
+  .site-header .navigation { font-size: 14px; gap: 13px; }
+  .site-header .brand { font-size: 22px; }
+  .site-header .nav-cta { padding: 10px 14px; gap: 8px; }
+  .locale-switch { padding: 5px 9px; }
+}
+html, body { overflow-x: clip; }
+
+/* ---------- Brand logo image ---------- */
+.brand-logo { width: 56px; height: 56px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 2px 6px #1d544922); }
+.brand { gap: 12px; }
+.footer .brand-logo { width: 52px; height: 52px; }
+@media (max-width: 760px) { .brand-logo { width: 48px; height: 48px; } }
